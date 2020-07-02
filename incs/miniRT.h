@@ -6,7 +6,7 @@
 /*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/01 13:14:13 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/02 15:47:18 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/02 17:27:34 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct	s_MapInfo
 // (4) Light
 	t_c		LightPoint;
 	double	BrightRatio;
+	t_c		LightColor;
 // (5) Sphere
 	t_c		SphereCenter;
 	double	SphereDiameter;

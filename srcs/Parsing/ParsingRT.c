@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Parsing.c                                          :+:      :+:    :+:   */
+/*   ParsingRT.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seogkim <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/02 14:44:07 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/02 16:26:43 by seogkim          ###   ########.fr       */
+/*   Created: 2020/07/02 17:27:22 by seogkim           #+#    #+#             */
+/*   Updated: 2020/07/02 17:27:26 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/minirt.h"
+#include "ParsingRT.h"
 
 int		fill_M(char *line, t_M *s)
 {
@@ -19,21 +19,23 @@ int		fill_M(char *line, t_M *s)
 	ret = 0;
 	spacepasser(&line);
 	if (line[0] == 'R')
-		ret = fillRes(ft_split(line, ' '));
+		ret = fillRes(ft_split(line, ' '), s);
 	else if (line[0] == 'A')
-		ret = fillAmbient(ft_split(line, ' '));
+		ret = fillAmbient(ft_split(line, ' '), s);
 	else if (line[0] == 'c')
-		ret = fillCamera(ft_split(line, ' '));
+		ret = fillCamera(ft_split(line, ' '), s);
+	else if (line[0] == 'l')
+		ret = fillLight(ft_split(line, ' '), s);
 	else if (ft_strncmp("pl", line, 2) == 0)
-		ret = fillPlane(ft_split(line, ' '));
+		ret = fillPlane(ft_split(line, ' '), s);
 	else if (ft_strncmp("sp", line, 2) == 0)
-		ret = fillSphere(ft_split(line, ' '));
+		ret = fillSphere(ft_split(line, ' '), s);
 	else if (ft_strncmp("sq", line, 2) == 0)
-		ret = fillSquare(ft_split(line, ' '));
+		ret = fillSquare(ft_split(line, ' '), s);
 	else if (ft_strncmp("cy", line, 2) == 0)
-		ret = fillCylinder(ft_split(line, ' '));
+		ret = fillCylinder(ft_split(line, ' '), s);
 	else if (ft_strncmp("tr", line, 2) == 0)
-		ret = fillTriangle(ft_split(line, ' '));
+		ret = fillTriangle(ft_split(line, ' '), s);
 	return (ret);
 }
 
