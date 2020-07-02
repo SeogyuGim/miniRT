@@ -6,7 +6,7 @@
 /*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/01 13:14:13 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/02 17:27:34 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/02 19:04:24 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,25 @@
 #include "../minilibx_opengl/mlx.h"
 #include "../libft/libft.h"
 
+// SubStruct for parsing the map information.
 typedef struct	s_xyzCoordinates
 {
 	double	x;
 	double	y;
 	double	z;
 }				t_c;
-
+// Variables for function in mlx engine.
+typedef struct	s_mlx
+{
+	void	*mlx_ptr;
+	void	*win_ptr;
+	void	*img_ptr;
+	char	*img_addr;
+	int		endian;
+	int		size_line;
+	int		bits_per_pixel;
+}				t_mlx;
+// Total information.
 typedef struct	s_MapInfo
 {
 // (1) resoulution : x render size, y render size
@@ -67,5 +79,8 @@ typedef struct	s_MapInfo
 	t_c		Triangle2;
 	t_c		Triangle3;
 	t_c		TriangleColor;
+// (10) MLX
+	t_mlx	mlx;
 }				t_M;
+
 #endif
