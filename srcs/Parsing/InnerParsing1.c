@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   InnerParsing1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seogkim <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 16:29:47 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/02 17:26:39 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/06 16:42:05 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ParsingRT.h"
+#include "../../incs/ParsingRT.h"
 
 int		fillRes(char **str, t_M *s)
 {
@@ -51,7 +51,7 @@ int		fillPlane(char **str, t_M *s)
 {
 	if (fillSubStruct(ft_split(str[1], ','), &(s->Plane)) == -1
 		|| fillSubStruct(ft_split(str[2], ','), &(s->PlaneVec3)) == -1
-		|| fillSUbStruct(ft_split(str[3], ','), &(s->PlaneColor)) == -1)
+		|| fillSubStruct(ft_split(str[3], ','), &(s->PlaneColor)) == -1)
 		return (-1);
 	return (0);
 }

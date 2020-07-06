@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seogkim <seogkim@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/27 15:57:26 by seogkim           #+#    #+#             */
-/*   Updated: 2020/06/05 04:28:52 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/06 15:07:47 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-// # include "ft_printf/incs/libftprintf.h"
+
 typedef struct		s_list
 {
 	void			*content;

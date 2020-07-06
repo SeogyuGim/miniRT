@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ParsingRT.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seogkim <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 17:27:22 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/02 17:27:26 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/06 16:54:40 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ParsingRT.h"
+#include "../../incs/ParsingRT.h"
 
 int		fill_M(char *line, t_M *s)
 {
@@ -39,21 +39,25 @@ int		fill_M(char *line, t_M *s)
 	return (ret);
 }
 
-void	parsingRT(t_M *s, char *path)
+int		parsingRT(t_M *s, char *path)
 {
 	int		fd;
 	int		ret;
 	char	*line;
 
 	fd = open(path, O_RDONLY);
-	while ((ret = get_next_line(fd, line)) >= 0)
+	while ((ret = get_next_line(fd, &line)) >= 0)
 	{
 		if (line[0] != ' ')
 			if (fill_M(line, s) == -1)
-				exitProgram();
+			{
+				write(1, "error\n", 6); // exitProgram();
+				return (-1);
+			}
 		free(line);
 		if (ret == 0)
 			break ; 
 	}
 	line = 0;
+	return (0);
 }

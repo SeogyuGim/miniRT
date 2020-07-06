@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ParsingRT_Utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seogkim <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 17:32:46 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/02 17:33:10 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/06 16:53:26 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/minirt.h"
+#include "../../incs/ParsingRT.h"
 
 void	spacepasser(char **s)
 {
@@ -20,23 +20,27 @@ void	spacepasser(char **s)
 
 double	ft_stod(char *s)
 {
+	char	**str;
 	int		w;
 	double	d;
-	int		minus;
+	int		flag;
 
-	w = 0;
-	minus = 1;
-	if (*s == '-' && s++)
-		minus = -1;
-	while (ft_isdigit(*s))
-		w = w * 10 + *s - '0';
-	if (*s == '.')
+	flag = 1;
+	if (s[0] == '-')
+	{
+		flag = -1;
 		s++;
-	d = 0.0;
-	while (ft_isdigit(*s))
-		d = d / 10 * 10 + *s - '0';
+	}
+	str = ft_split(s, '.');
+	w = ft_atoi(str[0]);
+	d = (double)ft_atoi(str[1]);
+	while (d > 10.0)
+		d /= 10;
+	d /= 10;
 	d += w;
-	return (d * minus);
+	free(str);
+	str = 0;
+	return (d * flag);
 }
 
 int		fillSubStruct(char **str, t_c *p)
@@ -44,7 +48,8 @@ int		fillSubStruct(char **str, t_c *p)
 	p->x = ft_stod(str[0]);
 	p->y = ft_stod(str[1]);
 	p->z = ft_stod(str[2]);
-	if (p->x < 0 || p->x < 0 || p->z < 0)
-		return (-1);
+	p->x = p->x < 0 ? 0 : p->x;
+	p->y = p->x < 0 ? 0 : p->y;
+	p->z = p->x < 0 ? 0 : p->z;
 	return (0);
 }

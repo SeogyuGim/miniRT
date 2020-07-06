@@ -6,7 +6,7 @@
 /*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/01 13:14:13 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/02 19:04:24 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/06 16:33:23 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 #include <stdio.h>
 #include "../minilibx_opengl/mlx.h"
 #include "../libft/libft.h"
-
 // SubStruct for parsing the map information.
 typedef struct	s_xyzCoordinates
 {
@@ -46,7 +45,7 @@ typedef struct	s_MapInfo
 	int		Ry;
 // (2) Ambient lightning
 	double	AmbientLightRatio;
-	t_rgb	AmbientLightColor;
+	t_c		AmbientLightColor;
 // (3) Camera
 	t_c		ViewPoint;
 	t_c		CameraVec3;

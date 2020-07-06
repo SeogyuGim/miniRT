@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seogkim <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 00:06:19 by seogkim           #+#    #+#             */
-/*   Updated: 2020/02/25 00:06:19 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/06 16:43:26 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int		ft_atoi(const char *str)
 
 	result = 0;
 	sign = 1;
+	if (str == NULL)
+		return (0);
 	while (*str == ' ' || *str == '\t' || *str == '\n'
 		|| *str == '\r' || *str == '\v' || *str == '\f')
 		str++;
