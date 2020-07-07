@@ -6,7 +6,7 @@
 /*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 17:32:46 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/06 16:53:26 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/07 08:56:55 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ double	ft_stod(char *s)
 	return (d * flag);
 }
 
-int		fillSubStruct(char **str, t_c *p)
+int		fillSubStruct(char **str, t_vec *p)
 {
 	p->x = ft_stod(str[0]);
 	p->y = ft_stod(str[1]);

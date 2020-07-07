@@ -6,7 +6,7 @@
 /*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 17:25:30 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/06 16:55:14 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/07 08:56:55 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int		fillTriangle(char **str, t_M *s);
 // ParsingRT_Utils
 void	spacepasser(char **s);
 double	ft_stod(char *s);
-int		fillSubStruct(char **str, t_c *p);
+int		fillSubStruct(char **str, t_vec *p);
 
 #endif

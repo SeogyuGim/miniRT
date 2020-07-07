@@ -6,7 +6,7 @@
 /*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 16:29:47 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/06 16:42:05 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/07 14:55:55 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int		fillCamera(char **str, t_M *s)
 		|| fillSubStruct(ft_split(str[2], ','), &(s->CameraVec3)) == -1
 		|| (s->FOV = ft_stod(str[3])) < 0)
 		return (-1);
+	s->CameraVec3.x = s->CameraVec3.x < 0 ? 0 : s->CameraVec3.x;
+	s->CameraVec3.y = s->CameraVec3.y < 0 ? 0 : s->CameraVec3.y;
 	return (0);
 }
 

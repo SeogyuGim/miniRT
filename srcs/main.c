@@ -6,7 +6,7 @@
 /*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 14:27:32 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/06 17:06:33 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/07 11:27:20 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	Render(int mode, char *path)
 	// 	return (CreateBmpFile(&s));
 	s.mlx.mlx_ptr = mlx_init();
 	s.mlx.win_ptr = mlx_new_window(s.mlx.mlx_ptr, s.Rx, s.Ry, path);
+	if (raytracing(&s) == -1)
+		return ; // SendErrorMessage();
 	mlx_loop(s.mlx.mlx_ptr);
 }
 

@@ -6,7 +6,7 @@
 /*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/01 13:14:13 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/06 16:33:23 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/07 14:33:08 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct	s_xyzCoordinates
 	double	x;
 	double	y;
 	double	z;
-}				t_c;
+}				t_vec;
 // Variables for function in mlx engine.
 typedef struct	s_mlx
 {
@@ -45,41 +45,43 @@ typedef struct	s_MapInfo
 	int		Ry;
 // (2) Ambient lightning
 	double	AmbientLightRatio;
-	t_c		AmbientLightColor;
+	t_vec		AmbientLightColor;
 // (3) Camera
-	t_c		ViewPoint;
-	t_c		CameraVec3;
+	t_vec		ViewPoint;
+	t_vec		CameraVec3;
 	int		FOV;
 // (4) Light
-	t_c		LightPoint;
+	t_vec		LightPoint;
 	double	BrightRatio;
-	t_c		LightColor;
+	t_vec		LightColor;
 // (5) Sphere
-	t_c		SphereCenter;
+	t_vec		SphereCenter;
 	double	SphereDiameter;
-	t_c		SphereColor;
+	t_vec		SphereColor;
 // (6) Plane
-	t_c		Plane;
-	t_c		PlaneVec3;
-	t_c		PlaneColor;
+	t_vec		Plane;
+	t_vec		PlaneVec3;
+	t_vec		PlaneColor;
 // (7) Square
-	t_c		Square;
-	t_c		SquareVec3;
+	t_vec		Square;
+	t_vec		SquareVec3;
 	double	SquareSideSize;
-	t_c		SquareColor;
+	t_vec		SquareColor;
 // (8) Cylinder
-	t_c		Cylinder;
-	t_c		CylinderVec3;
+	t_vec		Cylinder;
+	t_vec		CylinderVec3;
 	double	CylinderDiameter;
 	double	CylinderHeight;
-	t_c		CylinderColor;
+	t_vec		CylinderColor;
 // (9) Triangle
-	t_c		Triangle1;
-	t_c		Triangle2;
-	t_c		Triangle3;
-	t_c		TriangleColor;
+	t_vec		Triangle1;
+	t_vec		Triangle2;
+	t_vec		Triangle3;
+	t_vec		TriangleColor;
 // (10) MLX
 	t_mlx	mlx;
 }				t_M;
+
+int     raytracing(t_M *s);
 
 #endif
