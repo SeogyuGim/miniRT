@@ -6,7 +6,7 @@
 /*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 10:18:27 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/09 16:16:13 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/09 16:29:35 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,11 @@ double  length(t_vec3 vec)
 
 double  length_squared(t_vec3 vec)
 {
-    return (vec.e[0]*vec.e[0]+vec.e[1]*vec.e[1]+vec.e[2]*vec.e[2]);
+    return (
+        vec.e[0]*vec.e[0] +
+        vec.e[1]*vec.e[1] +
+        vec.e[2]*vec.e[2]
+    );
 }
 
 void    operater_addVec(t_vec3 *v1, t_vec3 *v2)
@@ -127,3 +131,4 @@ t_vec3  unit_vector(t_vec3 v)
     operater_divConst(length(a), &a);
     return (a);
 }
+
