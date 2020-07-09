@@ -6,7 +6,7 @@
 /*   By: seogkim <seogkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/01 13:14:13 by seogkim           #+#    #+#             */
-/*   Updated: 2020/07/07 14:33:08 by seogkim          ###   ########.fr       */
+/*   Updated: 2020/07/09 14:29:38 by seogkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ typedef struct	s_mlx
 	void	*mlx_ptr;
 	void	*win_ptr;
 	void	*img_ptr;
-	char	*img_addr;
-	int		endian;
-	int		size_line;
-	int		bits_per_pixel;
+	int		*img_addr;
 }				t_mlx;
 // Total information.
 typedef struct	s_MapInfo

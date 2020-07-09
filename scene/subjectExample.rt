@@ -1,17 +1,55 @@
+# "R" = Resolution
+# 1) x render size
+# 2) y render size
 R 1920 1080
 
+# "A" = Ambient lighting
+# 1) : ambient lighting ratio in range[0.0, 1.0]
+# 2) : R,G,B colors in range [0-255]
 A 0.2 255,255,255
 
+# "c" = Camera
+# 1) x,y,z cordinates of the view point
+# 2) 3d normalized orientation vector. In range [-1,1] for each x,y,z axis
+# 3) FOV: Horizontal field of view in degrees in range[0,180]
 c -50,0,20 0,0,0 70
 
+# "l" = Light
+# 1) x,y,z coordinates of the light point
+# 2) the light brightness ratio in range [0.0,1.0]
+# 3) R,G,B colors in range [0-255]
 l -40,0,30 0.7 255,255,255
 
-pl 0,0,0 0,1.0,0 255,0,225
-
+# "sp" = Sphere
+# 1) x,y,z coordinates of the sphere center
+# 2) the sphere diameter
+# 3) RGB colors in range [0-255]
 sp 0,0,20 20 255,0,0
 
+# "pl" = Plane
+# 1) x,y,z coordinates
+# 2) 3d normalized orientation vector. In range [-1,1] for each x,y,z axis
+# 3) RGB colors in range [0-255]
+pl 0,0,0 0,1.0,0 255,0,225
+
+# "sq" = Square
+# 1) x,y,z coordinates of the square center
+# 2) 3d normalized orientation vector. In range [-1,1] for each x,y,z axis
+# 3) side size
+# 4) RGB colors in range [0-255]
 sq 0,100,40 0,0,1.0 30 42,42,0
 
+# "cy" = Cylinder 
+# 1) x,y,z coordinates
+# 2) 3d normalized orientation vector. In range [-1,1] for each x,y,z axis
+# 3) the cylinder diameter
+# 4) the cylinder height
+# 5) RGB colors in range [0-255]
 cy 50.0,0.0,20.6 0,0,1.0 14.2 21.42 10,0,255
 
+# "tr" = Triangle
+# 1) x,y,z coordinates of the first point
+# 2) x,y,z coordinates of the second point
+# 3) x,y,z coordinates of the third point
+# 4) RGB colors in range [0-255]
 tr 10,20,10 10,10,20 20,10,10 0,0,255
